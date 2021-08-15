@@ -77,14 +77,14 @@ Nest is [MIT licensed](LICENSE).
 <h1> This App is made for skills refreshement purpose which i implemented<h1> 
 
 <ul>
-<li> <h3> CRUD POST, GET, GET BY ID || NAME, DELETE, PATCH </h3></li>
-<li> <h3> TYPEORM for Communication With MYSQL Database </h3> </li>
-<li> <h3> Using JWT Strategy For User Athentication </h3> </li>
-<li> <h3> Using 0Auth For Authentication with Google API </h3> </li>
-<li> <h3> Hashing Password Using Strong Encryption Method  </h3> </li>
-<li> <h3> Apply Guards For User Authorization </h3> </li>
-<li> <h3> Using Swagger For Documentation And Testing </h3> </li>
-<li> <h3> Anti CSFR Attack Protection </h3></li>  
+<li>  CRUD POST, GET, GET BY ID || NAME, DELETE, PATCH </li>
+<li>  TYPEORM for Communication With MYSQL Database  </li>
+<li>  Using JWT Strategy For User Athentication </li>
+<li>  Using 0Auth For Authentication with Google API  </li>
+<li>  Hashing Password Using Strong Encryption Method  </li>
+<li>  Apply Guards For User Authorization  </li>
+<li>  Using Swagger For Documentation And Testing  </li>
+<li>  Anti CSFR Attack Protection </li>  
 </ul>
 
 
