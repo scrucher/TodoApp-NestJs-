@@ -71,3 +71,20 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Todo App 
+
+<h1> This App is made for skills refreshement purpose which i implemented<h1> 
+
+<ul>
+<li> <h3> CRUD POST, GET, GET BY ID || NAME, DELETE, PATCH </h3></li>
+<li> <h3> TYPEORM for Communication With MYSQL Database </h3> </li>
+<li> <h3> Using JWT Strategy For User Athentication </h3> </li>
+<li> <h3> Using 0Auth For Authentication with Google API </h3> </li>
+<li> <h3> Hashing Password Using Strong Encryption Method  </h3> </li>
+<li> <h3> Apply Guards For User Authorization </h3> </li>
+<li> <h3> Using Swagger For Documentation And Testing </h3> </li>
+<li> <h3> Anti CSFR Attack Protection </h3></li>  
+</ul>
+
+

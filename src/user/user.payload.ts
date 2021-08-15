@@ -1,1 +1,3 @@
-export class SignInPayload {}
+export class SignInPayload {
+  username: string;
+}

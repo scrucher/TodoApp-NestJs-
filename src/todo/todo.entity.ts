@@ -10,4 +10,6 @@ export class Todo extends BaseEntity {
   body: string;
   @Column()
   priority: string;
+  @Column()
+  status: string;
 }
