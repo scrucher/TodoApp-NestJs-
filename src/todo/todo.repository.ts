@@ -22,7 +22,7 @@ export class TodoRepository extends Repository<Todo> {
     }
     return todo;
   }
-  async deleteTask(id: number): Promise<void> {
+  async deleteTask(id: number): Promise<Todo | void> {
     const deleteTask = await this.delete(id);
     if (!deleteTask.affected) {
       throw new NotFoundException();

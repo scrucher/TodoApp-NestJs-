@@ -15,7 +15,7 @@ export class TodoService {
   async createTask(todoDto: TodoDto): Promise<Todo> {
     return this.todoRepository.createTask(todoDto);
   }
-  async deleteTask(id: number): Promise<void> {
+  async deleteTask(id: number): Promise<Todo | void> {
     return this.todoRepository.deleteTask(id);
   }
   async getTaskById(id: number): Promise<Todo> {
