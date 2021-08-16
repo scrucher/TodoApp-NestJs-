@@ -1,7 +1,19 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  Unique,
+} from 'typeorm';
+//import * as uuid from 'uuid';
+import * as bcrypt from 'bcrypt';
 
 @Entity()
+@Unique(['username'])
 export class User extends BaseEntity {
+  /*@BeforeInsert() genarate() {
+    this.id = uuid();
+  }*/
   @PrimaryGeneratedColumn()
   id: number;
   @Column()
@@ -14,4 +26,9 @@ export class User extends BaseEntity {
   password: string;
   @Column()
   salt: string;
+
+  async validatePassword(password: string): Promise<boolean> {
+    const hash = await bcrypt.hash(password, this.salt);
+    return hash === this.password;
+  }
 }
