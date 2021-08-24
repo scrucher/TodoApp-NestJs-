@@ -3,7 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { SignInDto } from './dto/signing.dto';
 import { SignUpDto } from './dto/signup.dto';
-import { SignInPayload } from './user.payload';
+import { SignInPayload } from './dto/user.payload';
 import { UserRepository } from './user.repository';
 
 @Injectable()
@@ -16,7 +16,7 @@ export class UserService {
   async signUp(signUpDto: SignUpDto): Promise<void> {
     return this.userRepository.createUser(signUpDto);
   }
-  async signIn(signInDto: SignInDto): Promise<string> {
+  async signIn(signInDto: SignInDto): Promise<{ access_token }> {
     const username = await this.userRepository.validateUser(signInDto);
     if (!username) {
       throw new UnauthorizedException(
@@ -25,6 +25,6 @@ export class UserService {
     }
     const pyload: SignInPayload = { username };
     const access_token = await this.jwtService.sign(pyload);
-    return access_token;
+    return { access_token };
   }
 }

@@ -3,7 +3,7 @@ import { SignUpDto } from './dto/signup.dto';
 import { User } from './user.entity';
 import * as bcrypt from 'bcrypt';
 import {
-  //ConflictException,
+  ConflictException,
   InternalServerErrorException,
 } from '@nestjs/common';
 import { SignInDto } from './dto/signing.dto';
@@ -18,11 +18,14 @@ export class UserRepository extends Repository<User> {
     user.email = email;
     user.salt = await bcrypt.genSalt();
     user.password = await this.hashpassword(password, user.salt);
-    const savedUser = await user.save();
+    /*const savedUser = await user.save();
     if (!savedUser) {
       throw new InternalServerErrorException('Please Try Again');
-    }
-    /*try {
+    }else if(error.code === 2305){
+      throw new 
+
+    }*/
+    try {
       await user.save();
     } catch (error) {
       if (error.code === 2305) {
@@ -32,11 +35,11 @@ export class UserRepository extends Repository<User> {
           'something went wrong Please try again',
         );
       }
-    }*/
+    }
   }
   async validateUser(signInDto: SignInDto): Promise<string> {
     const { username, password } = signInDto;
-    const user = await this.findOne(username);
+    const user = await this.findOne({ username });
     if (user && (await user.validatePassword(password))) {
       return user.username;
     } else {

@@ -1,6 +1,6 @@
 export class UserDTO {
+  name:string;
   username: string;
-  userRole: string;
   email: string;
   password: string;
 }
